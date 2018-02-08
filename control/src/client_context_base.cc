@@ -40,7 +40,7 @@ CheckOptions GetJustCheckOptions(const TransportConfig& config) {
 
 CheckOptions GetCheckOptions(const TransportConfig& config) {
   auto options = GetJustCheckOptions(config);
-  if (config.network_fail_policy() == TransportConfig::FAIL_CLOSE) {
+  if (config.network_fail_policy() == ::istio::mixer::v1::config::client::FAIL_CLOSE) {
     options.network_fail_open = false;
   }
   return options;
